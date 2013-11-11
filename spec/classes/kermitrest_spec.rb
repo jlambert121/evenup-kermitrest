@@ -4,6 +4,9 @@ describe 'kermitrest', :type => :class do
 
   it { should create_class('kermitrest') }
   it { should contain_package('kermit-restmco').with_ensure('latest') }
+  ['sinatra', 'inifile', 'thin'].each do |package|
+    it { should contain_package(package).with_provider('gem') }
+  end
   it { should contain_file('/var/log/kermit-restmco.log') }
   it { should contain_file('/etc/kermit/kermit-restmco.cfg') }
   it { should contain_service('kermit-restmco').with_ensure('running').with_enable(true) }
@@ -28,6 +31,13 @@ describe 'kermitrest', :type => :class do
     context 'invalid osfamily' do
       let(:facts) { { :osfamily => 'IDontExist' } }
       it { expect { should raise_error(Puppet::Error) } }
+    end
+  end
+
+  context 'gem package support' do
+    let(:params) { { :gem_provider => 'rpm', :gem_prefix => 'rubygem-' } }
+    ['rubygem-sinatra', 'rubygem-inifile', 'rubygem-thin'].each do |package|
+      it { should contain_package(package).with_provider('rpm') }
     end
   end
 
