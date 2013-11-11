@@ -25,6 +25,6 @@ notifications:
   email: false
   hipchat:
     rooms:
-      - secure: "UPDATEME"
+      - secure: "U1PO+cC9N9IdClgHmSCcE/Z3fkUEKUkHnJmvmSIjDW7sWnAMgwQ5B3uYtrxxSJwHQRk4n8KGNx1mYhiYJvD0x4dyRR2CVyieao0QkeBOU7GurRDwC2oOxpmjTafbUB6x5coQOv+4wqlKNze1OwSbWDpsqNfzwCocMTKNBne4j7A="
   on_success: always
   on_failure: always
