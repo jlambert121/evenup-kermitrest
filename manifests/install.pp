@@ -10,6 +10,7 @@ class kermitrest::install {
   package { ["${gem_prefix}sinatra", "${gem_prefix}inifile", "${gem_prefix}thin"]:
     ensure    => 'installed',
     provider  => $kermitrest::gem_provider,
+    before    => Class['kermitrest::service'],
   }
 
   package { 'kermit-restmco':
