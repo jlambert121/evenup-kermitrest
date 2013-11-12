@@ -2,6 +2,8 @@
 class kermitrest (
   $install_repo   = $kermitrest::params::install_repo,
   $version        = $kermitrest::params::version,
+  $gem_provider   = $kermitrest::params::gem_provider,
+  $gem_prefix     = $kermitrest::params::gem_prefix,
   $service_ensure = $kermitrest::params::service_ensure,
   $service_enable = $kermitrest::params::service_enable,
   $log_level      = $kermitrest::params::log_level,

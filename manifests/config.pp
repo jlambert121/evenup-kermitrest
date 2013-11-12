@@ -20,7 +20,7 @@ class kermitrest::config {
     owner   => 'nobody',
     group   => 'nobody',
     mode    => '0444',
-    content => 'puppet:///modules/kermitrest/kermit-restmco.cfg.erb',
+    content => template('kermitrest/kermit-restmco.cfg.erb'),
   }
 
 }
